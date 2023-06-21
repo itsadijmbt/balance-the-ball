@@ -53,7 +53,7 @@ function backtoPOS(){
     let rect=basketBall.getBoundingClientRect();
     console.log("line.getBoundingClientRect() in callback: \n" + "x: " + rect.left + "\ny: " + rect.top);
   
-   if(rect.top>='642' && rect.top<='660')
+   if(rect.top>='600' && rect.top<='660')
    {
     score.textContent='0'
     console.log('you lose',x);
