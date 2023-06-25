@@ -12,6 +12,7 @@ let x;
 let con;
 let ad = new Audio('s.mp3');
 basketBall.addEventListener('click',()=>{
+  
   let rect=basketBall.getBoundingClientRect();
   ad.play();
   line.style.backgroundColor='red';
@@ -35,7 +36,7 @@ basketBall.addEventListener('click',()=>{
 
 function backtoPOS(){
 
-  
+  console.log("down")
   basketBall.style.transform=`translate(${2*x}%,${0}%)`;
   
   basketBall.addEventListener('click',()=>{
@@ -49,11 +50,13 @@ function backtoPOS(){
 
   function checkgn()
   {
- 
+    let liner = line.getBoundingClientRect();
     let rect=basketBall.getBoundingClientRect();
-    console.log("line.getBoundingClientRect() in callback: \n" + "x: " + rect.left + "\ny: " + rect.top);
-  
-   if(rect.top>='600' && rect.top<='660')
+    console.log("basketball.getBoundingClientRect() in callback: \n" + "x=top: " + rect.top + "\nbottom: " + rect.bottom);
+
+  console.log("liner.getBoundingClientRect() in callback: \n" + "top: " + liner.top + "\nbottom: " + liner.bottom);
+    
+   if(rect.bottom>=liner.top)
    {
     score.textContent='0'
     console.log('you lose',x);
